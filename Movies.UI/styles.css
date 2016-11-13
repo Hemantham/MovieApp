@@ -1,0 +1,46 @@
+.grid-footer {
+       display: flex;
+    align-items: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    padding: 0 16px;
+    font-size: 18px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 85px;
+    margin: 0 15px 20px 15px;
+}
+
+.grid-footer-text {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0;
+    font-weight: normal;
+    font-size: inherit;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #fff;
+}
+
+.cardbody
+{
+    height:200px;
+}
+
+.cardbody img
+{
+    max-height:100%;
+    max-width:45%;
+
+}
+
+.marginedtop30 {
+    margin-top: 30px;
+}
