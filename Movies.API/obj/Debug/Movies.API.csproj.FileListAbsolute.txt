@@ -1,0 +1,7 @@
+E:\projects\MovieDB\Movies.API\bin\Debug\Movies.API.dll
+E:\projects\MovieDB\Movies.API\bin\Debug\Movies.API.pdb
+E:\projects\MovieDB\Movies.API\obj\Debug\Movies.API.dll
+E:\projects\MovieDB\Movies.API\obj\Debug\Movies.API.pdb
+E:\projects\MovieDB\Movies.API\bin\Debug\Movies.Models.dll
+E:\projects\MovieDB\Movies.API\bin\Debug\Movies.Models.pdb
+E:\projects\MovieDB\Movies.API\obj\Debug\Movies.API.csprojResolveAssemblyReference.cache

@@ -1,0 +1,15 @@
+E:\projects\MovieDB\Movies.Bootstrapper\bin\Debug\Movies.Bootstrapper.dll
+E:\projects\MovieDB\Movies.Bootstrapper\bin\Debug\Movies.Bootstrapper.pdb
+E:\projects\MovieDB\Movies.Bootstrapper\bin\Debug\Movies.API.dll
+E:\projects\MovieDB\Movies.Bootstrapper\bin\Debug\Movies.Models.dll
+E:\projects\MovieDB\Movies.Bootstrapper\bin\Debug\Movies.Services.dll
+E:\projects\MovieDB\Movies.Bootstrapper\bin\Debug\Ninject.dll
+E:\projects\MovieDB\Movies.Bootstrapper\bin\Debug\Newtonsoft.Json.dll
+E:\projects\MovieDB\Movies.Bootstrapper\bin\Debug\Movies.API.pdb
+E:\projects\MovieDB\Movies.Bootstrapper\bin\Debug\Movies.Models.pdb
+E:\projects\MovieDB\Movies.Bootstrapper\bin\Debug\Movies.Services.pdb
+E:\projects\MovieDB\Movies.Bootstrapper\bin\Debug\Ninject.xml
+E:\projects\MovieDB\Movies.Bootstrapper\bin\Debug\Newtonsoft.Json.xml
+E:\projects\MovieDB\Movies.Bootstrapper\obj\Debug\Movies.Bootstrapper.csprojResolveAssemblyReference.cache
+E:\projects\MovieDB\Movies.Bootstrapper\obj\Debug\Movies.Bootstrapper.dll
+E:\projects\MovieDB\Movies.Bootstrapper\obj\Debug\Movies.Bootstrapper.pdb

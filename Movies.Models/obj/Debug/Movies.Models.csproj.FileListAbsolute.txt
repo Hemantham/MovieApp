@@ -1,0 +1,4 @@
+E:\projects\MovieDB\Movies.Models\bin\Debug\Movies.Models.dll
+E:\projects\MovieDB\Movies.Models\bin\Debug\Movies.Models.pdb
+E:\projects\MovieDB\Movies.Models\obj\Debug\Movies.Models.dll
+E:\projects\MovieDB\Movies.Models\obj\Debug\Movies.Models.pdb

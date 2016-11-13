@@ -1,0 +1,13 @@
+E:\projects\MovieDB\Movies.Services\obj\Debug\Movies.Services.csprojResolveAssemblyReference.cache
+E:\projects\MovieDB\Movies.Services\bin\Debug\Movies.Services.dll
+E:\projects\MovieDB\Movies.Services\bin\Debug\Movies.Services.pdb
+E:\projects\MovieDB\Movies.Services\bin\Debug\Movies.API.dll
+E:\projects\MovieDB\Movies.Services\bin\Debug\Movies.Models.dll
+E:\projects\MovieDB\Movies.Services\bin\Debug\Newtonsoft.Json.dll
+E:\projects\MovieDB\Movies.Services\bin\Debug\Movies.API.pdb
+E:\projects\MovieDB\Movies.Services\bin\Debug\Movies.Models.pdb
+E:\projects\MovieDB\Movies.Services\bin\Debug\Newtonsoft.Json.xml
+E:\projects\MovieDB\Movies.Services\obj\Debug\Movies.Services.dll
+E:\projects\MovieDB\Movies.Services\obj\Debug\Movies.Services.pdb
+E:\projects\MovieDB\Movies.Services\bin\Debug\Ninject.dll
+E:\projects\MovieDB\Movies.Services\bin\Debug\Ninject.xml
