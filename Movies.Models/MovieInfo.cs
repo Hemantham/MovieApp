@@ -14,7 +14,6 @@ namespace Movies.Models
         public string Title { get; set; }
         public short Year { get; set; }
         public string ImageUrl { get; set; }
-
         public string Provider { get; set; }
 
     }

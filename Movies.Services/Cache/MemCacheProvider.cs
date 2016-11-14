@@ -13,8 +13,8 @@ namespace Movies.Services.Cache
 
         public MemCachProvider()
         {
-            var x = 1;
         }
+
         public override void AddItem<T>(string key, T value)
         {
             base.AddItem(key, value);
@@ -65,17 +65,5 @@ namespace Movies.Services.Cache
                 return _memCachProvider;
             }
         }
-
-        //class Nested
-        //{
-        //    // Explicit static constructor to tell C# compiler
-        //    // not to mark type as beforefieldinit
-        //    static Nested()
-        //    {
-        //    }
-        //    internal static readonly MemCachProvider instance = new MemCachProvider();
-        //}
-
-
     }
 }

@@ -10,9 +10,9 @@ namespace Movies.Services.Utility
 {
     public class HttpService
     {
-        private string _host;
+        private readonly string _host;
         private IDictionary<string, string> _headers;
-        private HttpClient _httpClient;
+        private readonly HttpClient _httpClient;
 
         public HttpService(string host, IDictionary<string, string> headers)
         {

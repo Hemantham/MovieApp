@@ -14,7 +14,7 @@ namespace Movies.Rest.Controllers
     //[Authorize]
     public class MoviesController : ApiController
     {
-        private IMovieService _movieService;
+        private readonly IMovieService _movieService;
 
         public MoviesController(IMovieService movieService)
         {

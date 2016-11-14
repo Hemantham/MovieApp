@@ -16,7 +16,7 @@ namespace Movies.Services.Services
     public class WebJetBaseService
     {
         protected HttpService HttpService;
-        protected const int TopN = 10;
+        protected const int TopN = 20;
         protected readonly ICacheProvider CacheProvider;
 
         public WebJetBaseService()
