@@ -19,11 +19,7 @@ Unit tests written for API Layer.
 Simple runtime caching used to cache the data since the given API's are very unpredictable.
 
 UI is responsive with Bootstrap Material design.
-
-
-
- ![]({{site.baseurl}}//Capture.PNG)
-
+![]({{site.baseurl}}//Capture.PNG)
 
 
 ##
