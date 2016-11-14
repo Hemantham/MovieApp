@@ -102,7 +102,7 @@ namespace Movies.Services.Services
 
             if (image == null)
             {
-                image = await HttpService.GetImage(info.ImageUrl);
+                image = await HttpService.GetImageAsync(info.ImageUrl);
 
                 if (image != null)
                 {

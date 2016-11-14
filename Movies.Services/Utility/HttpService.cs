@@ -49,8 +49,7 @@ namespace Movies.Services.Utility
             }
         }
 
-        //todo: make async
-        public async Task< string> GetImage(string uri)
+        public async Task< string> GetImageAsync(string uri)
         {
             try
             {           
