@@ -7,6 +7,8 @@ Functionality
 
 User can search for movies by title and then see who is the provider. (Cinemaworld Or Filmworld). Then they can click on image tile to view details and price. 
 
+note : If individual movie details are not loaded in the first click and gives the loading failiur message , click it again. (This is due to individual movie requests are not cached) 
+
 Key considerations
 
 Since the 3rd PArty movie provider details  needs to be kept hidden from clients and 
@@ -20,7 +22,8 @@ UI is done in Angular2 with TypeScript. RxJs Observables used for Http calls fro
 
 Unit tests written for API Layer.
 
-Simple runtime caching used to cache the data since the given API's are very unpredictable.
+Simple runtime Caching used to cache the data since the given API's are very unpredictable.
+Individual movie details are not cached , and are retrieved allways from third party API. 
 
 UI is responsive with Bootstrap Material design.
 ![]({{site.baseurl}}//Capture.PNG)
@@ -31,6 +34,8 @@ UI is responsive with Bootstrap Material design.
 ToDos./ Nice to haves..
 
 Implement better Error and Excetion handling to detect Http codes returned from 3rd party.
+
+show a waitig animation for log web calls
 
 Move caching from Runtime Cache to redis or something similar.
 

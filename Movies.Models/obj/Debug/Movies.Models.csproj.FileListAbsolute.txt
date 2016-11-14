@@ -1,9 +1,9 @@
-E:\projects\MovieDB\Movies.Models\bin\Debug\Movies.Models.dll
-E:\projects\MovieDB\Movies.Models\bin\Debug\Movies.Models.pdb
-E:\projects\MovieDB\Movies.Models\obj\Debug\Movies.Models.dll
-E:\projects\MovieDB\Movies.Models\obj\Debug\Movies.Models.pdb
 C:\dev\MovieApp\Movies.Models\bin\Debug\Movies.Models.dll
 C:\dev\MovieApp\Movies.Models\bin\Debug\Movies.Models.pdb
 C:\dev\MovieApp\Movies.Models\obj\Debug\Movies.Models.dll
 C:\dev\MovieApp\Movies.Models\obj\Debug\Movies.Models.pdb
 C:\dev\MovieApp\Movies.Models\obj\Debug\Movies.Models.csprojResolveAssemblyReference.cache
+E:\projects\MovieDB\Movies.Models\bin\Debug\Movies.Models.dll
+E:\projects\MovieDB\Movies.Models\bin\Debug\Movies.Models.pdb
+E:\projects\MovieDB\Movies.Models\obj\Debug\Movies.Models.dll
+E:\projects\MovieDB\Movies.Models\obj\Debug\Movies.Models.pdb

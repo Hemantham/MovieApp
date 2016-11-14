@@ -10,12 +10,13 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Movies.API.API.Cache;
 using Movies.Services.Cache;
+using Movies.API.API.Utility;
 
 namespace Movies.Services.Services
 {
     public class WebJetBaseService
     {
-        protected HttpService HttpService;
+        protected IHttpService HttpService;
         protected const int TopN = 20;
         protected readonly ICacheProvider CacheProvider;
 
@@ -31,7 +32,7 @@ namespace Movies.Services.Services
         }
                 
 
-        protected MovieInfo Map(WebjetMovieResult t, string provider)
+        protected async Task<MovieInfo> Map(WebjetMovieResult t, string provider)
         {
             return new MovieInfo
             {
@@ -40,7 +41,7 @@ namespace Movies.Services.Services
                 Title = t.Title,
                 Type = (MovieType)Enum.Parse(typeof(MovieType), t.Type, true),
                 Year = t.Year,
-                //Price = decimal.Parse(t.Price),
+               // ImageString = await  HttpService.GetImage(t.Poster),
                 Provider = provider,
             };
         }
@@ -79,12 +80,37 @@ namespace Movies.Services.Services
                 {
                     return new List<MovieInfo>();
                 }
+            }            
+
+            var @return = new List<MovieInfo>();
+
+            foreach(var item in titles.Movies.Where(Filter(criteria)).Take(TopN))
+            {
+                var info = await Map(item, provider);
+                               
+                info.ImageString = await GetImage( info);
+
+                @return.Add(info);
             }
 
-            return titles.Movies
-                .Where(Filter(criteria))
-                .Take(TopN) //limit the number due to performance reasons ;
-                .Select(t => Map(t, provider));
+            return @return;
+        }
+
+        protected async Task<string> GetImage(MovieInfo info)
+        {
+            var image = CacheProvider.GetItem<string>(info.Id);
+
+            if (image == null)
+            {
+                image = await HttpService.GetImage(info.ImageUrl);
+
+                if (image != null)
+                {
+                    CacheProvider.AddItem(info.Id, image);
+                }
+            }
+
+            return image;
         }
 
         protected Func<WebjetMovieResult, bool> Filter(SearchCriteria criteria)

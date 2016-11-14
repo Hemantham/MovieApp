@@ -54,7 +54,9 @@
 
             <div class="row">
                 <div class="col-lg-6 cardbody">
-                    <img onError="this.src='images/Film-icon.png'" src="{{movie.ImageUrl}}" alt="..." />
+
+                      
+                    <img onError="this.src='images/Film-icon.png'" src="data:image/jpg;base64,{{movie.ImageString}}" alt="..." />
                 </div>
                 <div class="col-lg-6 cardbody">
                     <h4> <span class="label label-primary">{{movie.Provider}}</span></h4>
@@ -85,7 +87,7 @@
 
                     <div class="row  table-div-headerrow">
                         <div class="col-md-12">
-                            <img onError="this.src='images/Film-icon.png'" src="{{movieDetails.ImageUrl}}" alt="..." />
+                            <img onError="this.src='images/Film-icon.png'" src="data:image/jpg;base64,{{movieDetails.ImageString}}" alt="..." />
                         </div>
                     </div>
 

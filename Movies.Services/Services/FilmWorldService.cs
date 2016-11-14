@@ -22,7 +22,12 @@ namespace Movies.Services
         public async Task<MovieInfo> Get(string id)
         {
             var result =  await HttpService.GetAsync<WebjetMovieResult>($"api/filmworld/movie/{id}");
-            return MapDetail(result, "FilmWorldService");
+
+            var detail =  MapDetail(result, "FilmWorldService");
+
+            detail.ImageString = await GetImage(detail);
+
+            return detail;
         }
     }
 }

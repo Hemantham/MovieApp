@@ -1,6 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using Movies.API.API.Utility;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -8,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Movies.Services.Utility
 {
-    public class HttpService
+    public class HttpService : IHttpService
     {
         private readonly string _host;
         private IDictionary<string, string> _headers;
@@ -46,5 +48,25 @@ namespace Movies.Services.Utility
                 return null;
             }
         }
+
+        //todo: make async
+        public async Task< string> GetImage(string uri)
+        {
+            try
+            {           
+                var stream = await  _httpClient.GetStreamAsync(uri);
+                var memoryStream = new MemoryStream();
+                stream.CopyTo(memoryStream);
+                memoryStream.Position = 0;
+                return  Convert.ToBase64String(memoryStream.ToArray());
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+      
     }
 }
