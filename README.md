@@ -36,4 +36,6 @@ Move caching from Runtime Cache to redis or something similar.
 
 Create seperate component to show the detail view.
 
+Add Bootstrap and other dependancies to system.config.js. 
+
 
