@@ -3,6 +3,10 @@ Movie search
 
 ##
 
+Functionality
+
+User can search for movies by title and then see who is the provider. (Cinemaworld Or Filmworld). Then they can click on image tile to view details and price. 
+
 Key considerations
 
 Since the 3rd PArty movie provider details  needs to be kept hidden from clients and 
