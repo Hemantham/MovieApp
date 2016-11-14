@@ -34,7 +34,6 @@ namespace Movies.Services
         public async Task<IEnumerable<MovieInfo>> Search(SearchCriteria criteria)
         {
             var movies = new List<MovieInfo>();
-
             movies.AddRange( await _cinemaWorld.Search(criteria));
             movies.AddRange(await _filmWorld.Search(criteria));
             return movies;

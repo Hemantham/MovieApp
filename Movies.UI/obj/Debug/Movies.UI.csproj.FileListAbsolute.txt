@@ -63,3 +63,4 @@ C:\dev\MovieApp\Movies.UI\bin\Microsoft.AI.Web.xml
 C:\dev\MovieApp\Movies.UI\bin\Microsoft.AI.WindowsServer.xml
 C:\dev\MovieApp\Movies.UI\bin\Microsoft.ApplicationInsights.xml
 C:\dev\MovieApp\Movies.UI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\dev\MovieApp\Movies.UI\obj\Debug\Movies.UI.csprojResolveAssemblyReference.cache
