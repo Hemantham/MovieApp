@@ -12,7 +12,7 @@ namespace Movies.Rest.App_Start
     using Ninject.Web.Common;
     using Bootstrapper;
     using System.Web.Http;
-    using Dashboard.Rest.App_Start;
+    using Movies.Rest.App_Start;
     public static class NinjectWebCommon 
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();

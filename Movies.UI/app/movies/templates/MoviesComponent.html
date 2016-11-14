@@ -8,30 +8,7 @@
         </button>
         <a class="navbar-brand" href="index.html">Movies Database</a>
     </div>
-    <!-- /.navbar-header -->
-    <ul class="nav navbar-top-links navbar-right">
-
-        <!-- /.dropdown -->
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-user">
-              
-                <li>
-                    <a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                </li>
-            </ul>
-            <!-- /.dropdown-user -->
-        </li>
-        <!-- /.dropdown -->
-    </ul>
-    <!-- /.navbar-top-links -->
-
+    <ul class="nav navbar-top-links navbar-right"></ul>
 </nav>
 
 <div class="container">
@@ -46,37 +23,124 @@
                         <legend>Search for movies</legend>
                         <div class="form-group is-empty">
                             <label for="batchname" class="col-md-2 control-label">Title</label>
-                            <div class="col-md-10">
+                            <div class="col-md-6">
                                 <input type="text" [(ngModel)]="title" class="form-control" id="batchname" placeholder="enter movie title...">
+                            </div>
+                            <div class="col-md-2">
+                                <button type="button" (click)="onSubmit($event)" class="btn btn-primary">Search</button>
                             </div>
                         </div>
 
-                        </fieldset>
-                    </div>
+                    </fieldset>
                 </div>
             </div>
         </div>
+    </div>
+    <div *ngIf="hasError" class="row marginedtop30">
+        <div class ="col-lg-7">
+        <div class="bs-component">
+            <div class="alert alert-dismissible alert-info">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <strong>No data retrieved!</strong>
+                Non of the providers returned in timely manner. Please try again shortly
+            </div>
+        </div>
+    </div>
+</div>
 
-                        <div class="row marginedtop30">
-                            <div *ngFor="let movie of movies" class="col-lg-4">
-                                <a href="#" class="thumbnail clienttheme">
+<div class="row marginedtop30">
+    <div *ngFor="let movie of movies" class="col-lg-4">
+        <a href="#" (click)="$event.preventDefault();show(movie.Id, movie.Provider);" class="thumbnail clienttheme">
 
-                                    <div class="row">
-                                        <div class="col-lg-12 cardbody">
-                                            <img src="{{movie.ImageUrl}}" alt="..." />
+            <div class="row">
+                <div class="col-lg-6 cardbody">
+                    <img onError="this.src='images/Film-icon.png'" src="{{movie.ImageUrl}}" alt="..." />
+                </div>
+                <div class="col-lg-6 cardbody">
+                    <h4> <span class="label label-primary">{{movie.Provider}}</span></h4>
+                    Check Price
+                </div>
+            </div>
+            <div class="grid-footer">
+                <div class="grid-footer-text">
+                    {{movie.Title}}
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
 
-                                        </div>
-                                    </div>
+<div id="dialog-results" [style.display]="movieDetails != null ? 'block': 'none'" *ngIf="movieDetails != null" class="modal">
+    <div class="modal-dialog modal-dialog-wide">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" (click)="hide('#dialog-results')" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <fieldset>
+                    <legend class="modal-title">{{movieDetails.Title}}</legend>
+                </fieldset>
+            </div>
+            <div class="modal-body" style="height: 80%;">
 
-                                    <div class="grid-footer">
-                                        <div class="grid-footer-text">
-                                            {{movie.Title}}
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                <div>
 
+                    <div class="row  table-div-headerrow">
+                        <div class="col-md-12">
+                            <img onError="this.src='images/Film-icon.png'" src="{{movieDetails.ImageUrl}}" alt="..." />
                         </div>
+                    </div>
 
+                    <div>
+                        <div class="row">
+                            <div class="col-md-2 table-div-cell">
+                                Provider
+                            </div>
+                            <div class="col-md-10">
+                                <h4> <span class="label label-primary">{{movieDetails.Provider}}</span></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2 table-div-cell">
+                                Rated
+                            </div>
+                            <div class="col-md-3">
+                                <h4> <span class="label label-primary">{{movieDetails.Rated}}</span></h4>
+                            </div>
+                            <div class="col-md-2 table-div-cell">
+                                Released
+                            </div>
+                            <div class="col-md-3">
+                                <h4> <span class="label label-primary">{{movieDetails.Released}}</span></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2 table-div-cell">
+                                Price
+                            </div>
+                            <div class="col-md-3">
+                                <h4> <span class="label label-warning">{{movieDetails.Price}}</span></h4>
+                            </div>
+                            <div class="col-md-2 table-div-cell">
+                                Rating
+                            </div>
+                            <div class="col-md-3">
+                                <h4> <span class="label label-primary">{{movieDetails.Rating}}</span></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2 table-div-cell">
+                                Story
+                            </div>
+                            <div class="col-md-9">
+                                {{movieDetails.Plot }}
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>

@@ -6,7 +6,7 @@ using System.Web.Http.Dependencies;
 using Ninject;
 using Ninject.Syntax;
 
-namespace Dashboard.Rest.App_Start
+namespace Movies.Rest.App_Start
 {
     // Provides a Ninject implementation of IDependencyScope which resolves services using the Ninject container.
     public class NinjectDependencyScope : IDependencyScope

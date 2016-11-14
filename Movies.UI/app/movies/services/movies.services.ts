@@ -1,8 +1,6 @@
 ﻿import { MovieInfoDetail, MovieInfo, SearchCriteria } from "../domain/movies.domain" 
 import { Injectable }     from '@angular/core';
 import { Http, Response, Request, Headers, RequestOptions } from '@angular/http';
-//import { Observable }     from 'rxjs/Observable';
-//import '../../rxjs-operators'
 import { Observable } from 'rxjs/Rx';
 
 @Injectable()
@@ -12,6 +10,7 @@ export class MovieService {
         this.headers.append('Accept', 'application/json');
     }
     private headers: Headers;
+    private headersPost: Headers;
 
     public search(title: string): Observable<MovieInfo[]> {
         
@@ -24,6 +23,18 @@ export class MovieService {
             .map(this.extract)
             .catch(this.handleError));
     }       
+
+    public getMovie(id: string, provider: string): Observable<MovieInfoDetail> {
+
+        return this.http
+            .get(`/Movies.Rest/api/providers/${provider}/movies/${id}`, { headers: this.headers })
+            .map((res: Response) => {
+                let body: MovieInfoDetail = res.json();
+                return body;
+            })
+            .catch(this.handleError);
+
+    }
 
     private extract(res: Response): MovieInfo[] {
         let body: MovieInfo[] = res.json();

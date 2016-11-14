@@ -16,26 +16,12 @@ namespace Movies.Services
     {             
         public async Task<IEnumerable<MovieInfo>> Search(SearchCriteria criteria)
         {
-            var  titles = await _httpService.GetAsync<MoviesList>("api/filmworld/movies");
-
-            return titles.Movies
-                    .Where(Filter(criteria))
-                    .Take(_topN)//limit the number due to performance reasons ;
-                    .Select(t => Map(t, "FilmWorldService"));
-
-
-            //var getDetail = titles.Select(async t =>
-            //{
-            //    await _httpService.GetAsync<WebjetMovieResult>($"api/filmworld/movie/{t.ID}");
-            //    return Map(t, "FilmWorldService");
-            //});
-
-            //return Task.WhenAll(getDetail).Result.Where(FilterDetail(criteria));            
+            return await SearchProvider(criteria, "FilmWorldService", "api/filmworld/movies");
         }
 
         public async Task<MovieInfo> Get(string id)
         {
-            var result =  await _httpService.GetAsync<WebjetMovieResult>($"api/filmworld/movie/{id}");
+            var result =  await HttpService.GetAsync<WebjetMovieResult>($"api/filmworld/movie/{id}");
             return MapDetail(result, "FilmWorldService");
         }
     }

@@ -11,24 +11,51 @@ import { MovieService } from "./services/movies.services";
    
 export class MoviesComponent implements OnInit {
     
-    public movies: any[];
-    public errorMessage: any;
+    public movies: MovieInfo[];
+    public hasError: boolean;
     public title: string;
+    public movieDetails : MovieInfoDetail;
 
     constructor(private service: MovieService) {
          
     }
 
-    ngOnInit(): void {
+    onSubmit(event: any) {
+        this.hasError = false;
+        this.movies = [];
+        this.movieDetails = null;
 
-        //alert(1)
-        this.service.search("")
+        this.service.search(this.title)
             .subscribe((response: MovieInfo[]) => {
-
-              //  alert(response[0].Title)
                 this.movies = response;
-                 },
-            error => this.errorMessage = <any>error
-        );
+                debugger;
+                if (this.movies.length === 0) {
+                    this.hasError = true;
+                }
+                },
+            error => this.hasError = true);
+    }
+
+    public show(id: string, provider: string) {
+
+        this.hasError = false;
+        this.movieDetails = null;
+        this.service.getMovie(id, provider)
+            .subscribe((res: MovieInfoDetail) => {
+
+                this.movieDetails = res;
+               
+            },
+            (error:any): void => {
+                this.hasError = true;
+            });
+
+    }
+    public hide(element: string) {
+        this.movieDetails = null;
+    }
+
+    ngOnInit(): void {
+       
     }
 }

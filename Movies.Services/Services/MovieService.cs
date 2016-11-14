@@ -20,13 +20,12 @@ namespace Movies.Services
     /// </summary>
     public class MovieService : IMovieService
     {
-
-        IMovieProviderService _cinemaWorld;
-        IMovieProviderService _filmWorld;
+        readonly IMovieProviderService _cinemaWorld;
+        readonly IMovieProviderService _filmWorld;
 
         public MovieService(
-            [Named("FilmWorldService")]IMovieProviderService cinemaWorld, 
-            [Named("CinemaWorldService")] IMovieProviderService filmWorld)
+            [Named("CinemaWorldService")]IMovieProviderService cinemaWorld, 
+            [Named("FilmWorldService")] IMovieProviderService filmWorld)
         {
             _cinemaWorld = cinemaWorld;
             _filmWorld = filmWorld;
@@ -37,16 +36,8 @@ namespace Movies.Services
             var movies = new List<MovieInfo>();
 
             movies.AddRange( await _cinemaWorld.Search(criteria));
-
             movies.AddRange(await _filmWorld.Search(criteria));
-
             return movies;
-            ////return 
-                //return Task.WhenAll(
-                //    _cinemaWorld.Search(criteria), 
-                //    _filmWorld.Search(criteria))
-                //.Result
-                //.SelectMany(r=> r);                    
         }
 
         public async Task<MovieInfo> Get(string id, string provider)

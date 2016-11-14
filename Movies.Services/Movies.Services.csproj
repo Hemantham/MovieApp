@@ -41,6 +41,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cache\CacheBase.cs" />
+    <Compile Include="Cache\MemCacheProvider.cs" />
     <Compile Include="Json\WebJet\Movies.cs" />
     <Compile Include="Json\WebJet\WebjetMovieResult.cs" />
     <Compile Include="Services\MovieService.cs" />

@@ -36,11 +36,16 @@
 
 .cardbody img
 {
-    max-height:100%;
-    max-width:45%;
+    height:100%;
+    width:100%;
 
 }
 
 .marginedtop30 {
     margin-top: 30px;
+}
+
+.table-div-cell {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

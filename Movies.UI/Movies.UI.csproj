@@ -97,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\movies\templates\MoviesComponent.html" />
+    <Content Include="images\Film-icon.png" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
