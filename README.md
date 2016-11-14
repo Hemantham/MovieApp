@@ -28,6 +28,9 @@ Simple runtime Caching used to cache the data since the given API's are very unp
 Individual movie details are not cached , and are retrieved allways from third party API. 
 
 UI is responsive with Bootstrap Material design.
+
+Images are cached at the server side and sent as Base64String since they can not be accessed from client side. 
+
 ![]({{site.baseurl}}//Capture.PNG)
 
 
