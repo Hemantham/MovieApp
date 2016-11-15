@@ -36,6 +36,12 @@
             </div>
         </div>
     </div>
+    <div class="row row-centered">
+        <div class="col-lg-3 col-centered">
+            <md-progress-circle *ngIf="requesting" mode="indeterminate"></md-progress-circle>
+            </div>
+        </div>
+  
     <div *ngIf="hasError" class="row marginedtop30">
         <div class ="col-lg-7">
         <div class="bs-component">

@@ -14,7 +14,8 @@ export class MoviesComponent implements OnInit {
     public movies: MovieInfo[];
     public hasError: boolean;
     public title: string;
-    public movieDetails : MovieInfoDetail;
+    public movieDetails: MovieInfoDetail;
+    public requesting: boolean;
 
     constructor(private service: MovieService) {
          
@@ -24,30 +25,37 @@ export class MoviesComponent implements OnInit {
         this.hasError = false;
         this.movies = [];
         this.movieDetails = null;
-
+        this.requesting = true;
         this.service.search(this.title)
             .subscribe((response: MovieInfo[]) => {
                 this.movies = response;
-                debugger;
+                this.requesting = false;
                 if (this.movies.length === 0) {
                     this.hasError = true;
                 }
                 },
-            error => this.hasError = true);
+            error => {
+                this.hasError = true;
+                this.requesting = false;                
+            });
     }
 
     public show(id: string, provider: string) {
 
         this.hasError = false;
         this.movieDetails = null;
+        this.requesting = true;
         this.service.getMovie(id, provider)
             .subscribe((res: MovieInfoDetail) => {
 
                 this.movieDetails = res;
-               
+                this.requesting = false;                
+
             },
             (error:any): void => {
                 this.hasError = true;
+                this.requesting = false;                
+
             });
 
     }
