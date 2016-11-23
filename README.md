@@ -1,17 +1,13 @@
 # MovieApp
 Movie search
 
-##
-
-Functionality
+### Functionality
 
 User can search for movies by title and then see who is the provider. (Cinemaworld Or Filmworld). Then they can click on image tile to view details and price. 
 
 note : If individual movie details are not loaded in the first click and gives the loading failiur message , click it again. (This is due to individual movie requests are not cached) 
 
-
-
-Key considerations
+### Key considerations
 
 Since the 3rd PArty movie provider details  needs to be kept hidden from clients and 
 they needs to be abstracted to accomodate more providers in the future MovieWorld are CinemaWorl PAIs are wrapped in my own API.  This way we can add more providers in future without changing the UI.
@@ -33,15 +29,9 @@ Images are cached at the server side and sent as Base64String since they can not
 
 ![]({{site.baseurl}}//Capture.PNG)
 
-
-
-##
-
-ToDos./ Nice to haves..
+#### ToDos./ Nice to haves..
 
 Implement better Error and Excetion handling to detect Http codes returned from 3rd party.
-
-show a waitig animation for log web calls
 
 Move caching from Runtime Cache to redis or something similar.
 
