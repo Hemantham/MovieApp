@@ -7,6 +7,11 @@ User can search for movies by title and then see who is the provider. (Cinemawor
 
 note : If individual movie details are not loaded in the first click and gives the loading failiur message , click it again. (This is due to individual movie requests are not cached) 
 
+### Deployed at : 
+
+http://ec2-54-173-133-39.compute-1.amazonaws.com/movies.ui/
+
+
 ### Key considerations
 
 Since the 3rd PArty movie provider details  needs to be kept hidden from clients and 
